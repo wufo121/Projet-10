@@ -13,7 +13,21 @@ import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
-  const {last} = useData()
+  const {data} = useData()
+
+  const findLatestDate = () => {
+    if (!data || data.length === 0) {
+      return null;
+    }
+    const sortedData = data?.focus.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    return sortedData[0];
+  };
+
+  const last = findLatestDate();
+ 
+
+  
   return <>
     <header>
       <Menu />
