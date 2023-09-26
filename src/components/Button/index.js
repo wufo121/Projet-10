@@ -62,7 +62,7 @@ Button.defaultProps = {
   disabled: false,
   onClick: () => null,
   type: BUTTON_TYPES.DEFAULT,
-  title: "Envoyer",
+  title: "",
   children: null
 }
 
